@@ -2,43 +2,36 @@ import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 
 export default function Dashboard() {
-  const [events, setEvents] = useState([
-    {
-      title: 'Sample Event',
-      organizer: 'Club XYZ',
-      date: '2024-11-12',
-      time: '10:00 AM',
-      venue: 'Main Hall',
-      description: 'This is a sample event description.',
-      status: 'Draft', // Setting default status to 'Draft' for demonstration
-    },
-  ]);
+  const [events, setEvents] = useState([]);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
+
+  // Fetch events from the backend when the component mounts
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/admin'); // Adjust the URL to your API
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        setEvents(data);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   const openEditModal = (event) => {
     setSelectedEvent(event);
     setIsEditModalOpen(true);
   };
 
-  useEffect(() => {
-    if (isEditModalOpen && selectedEvent) {
-      document.getElementById('editTitle').value = selectedEvent.title;
-      document.getElementById('editOrganizer').value = selectedEvent.organizer;
-      document.getElementById('editDate').value = selectedEvent.date;
-      document.getElementById('editTime').value = selectedEvent.time;
-      document.getElementById('editVenue').value = selectedEvent.venue;
-      document.getElementById('editDescription').value = selectedEvent.description;
-      document.getElementById('editStatus').value = selectedEvent.status;
-    }
-  }, [isEditModalOpen, selectedEvent]);
-
   const closeEditModal = () => {
     setIsEditModalOpen(false);
     setSelectedEvent(null);
   };
 
-  const addEvent = (event) => {
+  const addEvent = async (event) => {
     event.preventDefault();
     const newEvent = {
       title: event.target.title.value,
@@ -49,11 +42,26 @@ export default function Dashboard() {
       description: event.target.description.value,
       status: event.target.status.value,
     };
-    setEvents([...events, newEvent]);
-    event.target.reset();
+
+    try {
+      const response = await fetch('/api/admin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newEvent),
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      setEvents([...events, data]); // Add the new event to the state
+      event.target.reset();
+    } catch (error) {
+      console.error('Error adding event:', error);
+    }
   };
 
-  const saveEventChanges = (e) => {
+  const saveEventChanges = async (e) => {
     e.preventDefault();
     const updatedEvent = {
       title: e.target.editTitle.value,
@@ -65,18 +73,53 @@ export default function Dashboard() {
       status: e.target.editStatus.value,
     };
 
-    setEvents(events.map(event => (event === selectedEvent ? updatedEvent : event)));
-    closeEditModal();
+    try {
+      const response = await fetch(`/api/admin/${selectedEvent.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedEvent),
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      setEvents(events.map(event => (event.id === selectedEvent.id ? data : event))); // Update the event in the state
+      closeEditModal();
+    } catch (error) {
+      console.error('Error updating event:', error);
+    }
   };
 
-  const deleteEvent = (eventToDelete) => {
-    setEvents(events.filter(event => event !== eventToDelete));
+  const deleteEvent = async (eventToDelete) => {
+    try {
+      const response = await fetch(`/api/admin/${eventToDelete.id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+      setEvents(events.filter(event => event.id !== eventToDelete.id)); // Remove the event from the state
+    } catch (error) {
+      console.error('Error deleting event:', error);
+    }
   };
 
-  const publishEvent = (eventToPublish) => {
-    setEvents(events.map(event =>
-      event === eventToPublish ? { ...event, status: 'Published' } : event
-    ));
+  const publishEvent = async (eventToPublish) => {
+    try {
+      const response = await fetch(`/api/admin/${eventToPublish.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...eventToPublish, status: 'Published' }),
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      setEvents(events.map(event => (event.id === eventToPublish.id ? data : event))); // Update the event in the state
+    } catch (error) {
+      console.error('Error publishing event:', error);
+    }
   };
 
   return (
@@ -91,7 +134,7 @@ export default function Dashboard() {
         <h2>Create Event</h2>
         <form id="eventForm" onSubmit={addEvent}>
           <label htmlFor="title">Event Title:</label>
-          <input type="text" id="title" name="title" required />
+          <input type="text" id ="title" name="title" required />
 
           <label htmlFor="organizer">Organizer Name:</label>
           <input type="text" id="organizer" name="organizer" required />
@@ -112,7 +155,7 @@ export default function Dashboard() {
             <label htmlFor="status">Visibility:</label>
             <select id="status" name="status">
               <option value="Draft">Draft</option>
-              <option value="published">Publish</option>
+              <option value="Published">Publish</option>
             </select>
           </div>
 
@@ -195,7 +238,7 @@ export default function Dashboard() {
                 <label htmlFor="editStatus">Visibility:</label>
                 <select id="editStatus" name="status">
                   <option value="Draft">Draft</option>
-                  <option value="published">Publish</option>
+                  <option value="Published">Publish</option>
                 </select>
               </div>
 

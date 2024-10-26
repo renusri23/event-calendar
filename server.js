@@ -6,8 +6,10 @@ const adminRoutes = require('./routes/admin');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -15,11 +17,21 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/admin', adminRoutes);
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(error => console.error('Could not connect to MongoDB:', error));
 
+// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('Connected to MongoDB'))
+//   .catch(error => console.error('Could not connect to MongoDB:', error));
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI); // This will use your connection string
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Could not connect to MongoDB:', error);
+    process.exit(1); // Exit the process if connection fails
+  }
+};
+
+connectDB(); 
 // WebSocket setup
 const wss = new WebSocket.Server({ noServer: true });
 wss.on('connection', (ws) => {

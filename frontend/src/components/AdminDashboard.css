@@ -1,0 +1,189 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: #333;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3b3b98;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+.create-event, .event-list {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #3b3b98;
+}
+
+form button {
+    background: #3b3b98;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+table th {
+    background: #f8f8f8;
+    color: #333;
+}
+
+button.edit-btn, button.delete-btn {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+button.edit-btn {
+    background: #3498db;
+}
+
+button.edit-btn:hover {
+    background: #2980b9;
+}
+
+button.delete-btn {
+    background: #e74c3c;
+}
+
+button.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex; /* Changed to flex for centering */
+    justify-content: center; /* Center modal horizontally */
+    align-items: center; /* Center modal vertically */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 20px; /* Margin for better visibility */
+    padding: 20px;
+    width: 90%;
+    max-width: 600px; /* Increased max width for better visibility */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto; /* Allows scrolling if the content is too large */
+}
+.publish-btn {
+    background-color: #28a745; /* Green background for the publish button */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for size */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .publish-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .publish-btn:active {
+    background-color: #1e7e34; /* Even darker on active click */
+  }

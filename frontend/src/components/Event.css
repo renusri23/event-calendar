@@ -1,0 +1,50 @@
+/* Event.css */
+.event {
+    display: flex;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white; 
+}
+
+.event-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%; 
+    background-color: #4B0082;
+    color: white; 
+    padding: 10px;
+}
+
+.event-date h3 {
+    margin: 0;
+    background-color: #8A2BE2; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+    border: 2px solid #8A2BE2; 
+}
+
+.event-details {
+    width: 75%;
+    padding: 20px; 
+    background-color: #E6E6FA; 
+    color: black; 
+}
+
+.event-details h3 {
+    margin: 0 0 10px 0; 
+}
+
+.event-details p {
+    margin: 5px 0 0;
+    color: #666;
+}

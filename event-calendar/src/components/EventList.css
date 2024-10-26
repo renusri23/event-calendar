@@ -1,0 +1,21 @@
+/* src/components/EventsList.css */
+.past {
+    background-color: violet;
+    border-color: #ccc;
+    
+}
+
+.past .event-date h3 {
+    color: #888;
+    
+}
+
+.past .event-details h3 {
+    color: #666;
+   
+}
+
+.past .event-details p {
+    color: #999;
+   
+}

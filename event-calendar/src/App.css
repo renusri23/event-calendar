@@ -1,30 +1,12 @@
-body{
-  margin:0;
-  padding:0;
-  height:100vh;
-}
-
-
-
 
 .App {
   text-align: center;
-  background-image: url('./components/$REYNF97.jpeg'); /* Replace with your image path */
-  background-size: cover;
-  /* background-position: center; */
-  height: 100vh; /* Full height */
-  background-attachment: fixed;
-  position: fixed;
-  margin: 0 auto;
-  /* display:flex; */
-  /* justify-content: center; */
-  width:100vh;
-  overflow: hidden;
+  /* background-image: url('./components/$REYNF97.jpeg'); */
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  height: 100vh;
+  width:100%; /* Full height */
+  
+
 
 }
-@media (max-width: 768px) {
-  .App {
-    background-image: url('./components/$REYNF97.jpeg'); /* Different image for mobile */
-  }
-}
-

@@ -33,7 +33,7 @@ function HomePage() {
 //   };
 
   return (
-    <div className="home-page">
+    <div className='home-page'>
       <div className="overlay">
       {/* <div class="marquee"><span>IIT Dharwad</span></div> */}
       <h1 className="jubble-text">IIT Dharwad</h1>
@@ -44,7 +44,8 @@ function HomePage() {
         </div>
         {/* <div className="college-name"><marquee>IIT Dharwad</marquee></div> */}
       </div>
-    </div>
+      </div>
+    
   );
 }
 

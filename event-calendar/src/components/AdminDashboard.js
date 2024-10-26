@@ -1,7 +1,6 @@
-// Dashboard.js
-import React, { useState } from 'react';
-// import "C:\Users\preks\Downloads\EC\event-calendar\event-calendar\src\pages\admind.css";
-import "./AdminDashboard.css";
+import React, { useState, useEffect } from 'react';
+import './AdminDashboard.css';
+
 export default function Dashboard() {
   const [events, setEvents] = useState([
     {
@@ -11,26 +10,28 @@ export default function Dashboard() {
       time: '10:00 AM',
       venue: 'Main Hall',
       description: 'This is a sample event description.',
-      status: 'Published',
+      status: 'Draft', // Setting default status to 'Draft' for demonstration
     },
   ]);
-
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const openEditModal = (event) => {
     setSelectedEvent(event);
     setIsEditModalOpen(true);
-    if (document.getElementById('editTitle')) {
-        document.getElementById('editTitle').value = event.title;
-        document.getElementById('editOrganizer').value = event.organizer;
-        document.getElementById('editDate').value = event.date;
-        document.getElementById('editTime').value = event.time;
-        document.getElementById('editVenue').value = event.venue;
-        document.getElementById('editDescription').value = event.description;
-        document.getElementById('editStatus').value = event.status;
-      }
   };
+
+  useEffect(() => {
+    if (isEditModalOpen && selectedEvent) {
+      document.getElementById('editTitle').value = selectedEvent.title;
+      document.getElementById('editOrganizer').value = selectedEvent.organizer;
+      document.getElementById('editDate').value = selectedEvent.date;
+      document.getElementById('editTime').value = selectedEvent.time;
+      document.getElementById('editVenue').value = selectedEvent.venue;
+      document.getElementById('editDescription').value = selectedEvent.description;
+      document.getElementById('editStatus').value = selectedEvent.status;
+    }
+  }, [isEditModalOpen, selectedEvent]);
 
   const closeEditModal = () => {
     setIsEditModalOpen(false);
@@ -52,7 +53,7 @@ export default function Dashboard() {
     event.target.reset();
   };
 
-const saveEventChanges = (e) => {
+  const saveEventChanges = (e) => {
     e.preventDefault();
     const updatedEvent = {
       title: e.target.editTitle.value,
@@ -71,6 +72,13 @@ const saveEventChanges = (e) => {
   const deleteEvent = (eventToDelete) => {
     setEvents(events.filter(event => event !== eventToDelete));
   };
+
+  const publishEvent = (eventToPublish) => {
+    setEvents(events.map(event =>
+      event === eventToPublish ? { ...event, status: 'Published' } : event
+    ));
+  };
+
   return (
     <div className="dashboard-container">
       <header>
@@ -103,7 +111,7 @@ const saveEventChanges = (e) => {
           <div className="event-options">
             <label htmlFor="status">Visibility:</label>
             <select id="status" name="status">
-              <option value="draft">Draft</option>
+              <option value="Draft">Draft</option>
               <option value="published">Publish</option>
             </select>
           </div>
@@ -137,20 +145,18 @@ const saveEventChanges = (e) => {
                 <td>{event.venue}</td>
                 <td>{event.status}</td>
                 <td>
-                  <button
-                    className="edit-btn"
-                    onClick={() => openEditModal(event)}
-                  >
+                  <button className="edit-btn" onClick={() => openEditModal(event)}>
                     Edit
                   </button>
-                  <button
-                    className="delete-btn"
-                    onClick={() =>
-                      deleteEvent(event)
-                    }
-                  >
+                  <button className="delete-btn" onClick={() => deleteEvent(event)}>
                     Delete
                   </button>
+
+                  {event.status === 'Draft' && (
+                    <button className="publish-btn" onClick={() => publishEvent(event)}>
+                      Publish
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
@@ -166,90 +172,29 @@ const saveEventChanges = (e) => {
               &times;
             </span>
             <h2>Edit Event</h2>
-            <form
-            //   onSubmit={(e) => {
-            //     e.preventDefault();
-            //     const updatedEvent = {
-            //       ...selectedEvent,
-            //       title: e.target.editTitle.value,
-            //       organizer: e.target.editOrganizer.value,
-            //       date: e.target.editDate.value,
-            //       time: e.target.editTime.value,
-            //       venue: e.target.editVenue.value,
-            //       description: e.target.editDescription.value,
-            //       status: e.target.editStatus.value,
-            //     };
-            //     setEvents(
-            //       events.map((event) =>
-            //         event === selectedEvent ? updatedEvent : event
-            //       )
-            //     );
-            //     closeEditModal();
-            //   }} 
-            onSubmit={saveEventChanges}
-            >
+            <form onSubmit={saveEventChanges}>
               <label htmlFor="editTitle">Event Title:</label>
-              <input
-                type="text"
-                id="editTitle"
-                name="title"
-                defaultValue={selectedEvent.title}
-                required
-              />
+              <input type="text" id="editTitle" name="title" required />
 
               <label htmlFor="editOrganizer">Organizer Name:</label>
-              <input
-                type="text"
-                id="editOrganizer"
-                name="organizer"
-                defaultValue={selectedEvent.organizer}
-                required
-              />
+              <input type="text" id="editOrganizer" name="organizer" required />
 
               <label htmlFor="editDate">Date:</label>
-              <input
-                type="date"
-                id="editDate"
-                name="date"
-                defaultValue={selectedEvent.date}
-                required
-              />
+              <input type="date" id="editDate" name="date" required />
 
               <label htmlFor="editTime">Time:</label>
-              <input
-                type="time"
-                id="editTime"
-                name="time"
-                defaultValue={selectedEvent.time}
-                required
-              />
+              <input type="time" id="editTime" name="time" required />
 
               <label htmlFor="editVenue">Venue:</label>
-              <input
-                type="text"
-                id="editVenue"
-                name="venue"
-                defaultValue={selectedEvent.venue}
-                required
-              />
+              <input type="text" id="editVenue" name="venue" required />
 
               <label htmlFor="editDescription">Description:</label>
-              <textarea
-                id="editDescription"
-                name="description"
-                rows="4"
-                defaultValue={selectedEvent.description}
-                required
-              ></textarea>
+              <textarea id="editDescription" name="description" rows="4" required></textarea>
 
               <div className="event-options">
                 <label htmlFor="editStatus">Visibility:</label>
-                <select
-                  id="editStatus"
-                  name="status"
-                  defaultValue={selectedEvent.status}
-                >
-                  <option value="draft">Draft</option>
+                <select id="editStatus" name="status">
+                  <option value="Draft">Draft</option>
                   <option value="published">Publish</option>
                 </select>
               </div>
@@ -262,5 +207,3 @@ const saveEventChanges = (e) => {
     </div>
   );
 }
-
-

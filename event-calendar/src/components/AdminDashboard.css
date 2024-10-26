@@ -169,3 +169,21 @@ button.delete-btn:hover {
     position: relative;
     overflow-y: auto; /* Allows scrolling if the content is too large */
 }
+.publish-btn {
+    background-color: #28a745; /* Green background for the publish button */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for size */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .publish-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .publish-btn:active {
+    background-color: #1e7e34; /* Even darker on active click */
+  }

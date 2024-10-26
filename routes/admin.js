@@ -9,7 +9,7 @@ router.post('/events', createEvent);
 router.get('/events/:id', getEvent);
 router.put('/events/:id', editEvent);
 router.delete('/events/:id', deleteEvent);
-router.get('/events', getAllEvents);
+// router.get('/events', getAllEvents);
 
 
 module.exports = router;

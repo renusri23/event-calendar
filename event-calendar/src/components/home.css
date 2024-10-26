@@ -1,86 +1,146 @@
-/* src/components/HomePage.css */
+/* src/components/HomePage.css 
+
+*/
 .home-page {
-    background-image: url('./$REYNF97.jpeg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Full height */
-    position: relative;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-  }
-  
-  .marquee {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
-    color: white;
-    font-size: 5rem; /* Adjust font size */
-    font-weight: bold; /* Make the font bold */
-    padding: 10px 0; /* Add some padding */
-    text-align: center;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflow */
-  }
-  
-  .marquee span {
-    display: inline-block;
-    animation: marquee 10s linear infinite; /* Animation for scrolling */
-  }
-  
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-  
-
-  .marquee img{
-  height:auto;
-  width:auto;
+  background-image: url('./$REYNF97.jpeg'); 
+  /* Replace with your image path */
   background-size: cover;
+  height: 100vh;
+  width:100vh; /* Full height */
+  /* position: relative; */
+  font-family: 'Arial', sans-serif; /* Set a clean font */
+  overflow: hidden; /* Prevent overflow from animations */
+}
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Gradient overlay for depth */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 40px; /* More padding for a spacious feel */
+}
+.jubble-text {
+  font-weight:800;
+  font-size: 4.5rem;
+  color:rgb(199, 143, 22);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  
+  display: inline-block; /* Required for transform */
+  transition: transform 0.5s ease; /* Smooth transition */
+}
 
+.jubble-text:hover {
+  animation: jubble 0.6s ease forwards;
+  color: #FFA500;
+  /* font-stretch: semi-condensed; */
+   /* Trigger animation on hover */
+}
+
+@keyframes jubble {
+  0% {
+    transform: translateY(0);
   }
+  25% {
+    transform: translateY(-10px); /* Move up */
+  }
+  50% {
+    transform: translateY(5px); /* Move down */
+  }
+  75% {
+    transform: translateY(-5px); /* Move up again */
+  }
+  100% {
+    transform: translateY(0); /* Back to original */
+  }
+}
+
+.login-button{
+  display:flex;
+  align-content:center;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+.login-image {
+  padding: 12px;
+  width: 8vh;
+  height: 8vh;
+  background-image: url('./login-icon.png');
+  background-size: cover;
+  margin-bottom: 10px;
+  border-radius: 50%; /* Circular image for style */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease; /* Add scaling on hover */
+}
+
+.login-image:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.login-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: blueviolet;
+  color: #fefefe;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-btn:hover {
+  background-color: #8A2BE2;
+  transform: scale(1.05); 
+}
+
+.heading {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  animation: fade-in 1s ease-out; /* Fade-in effect */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.college-name {
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+  font-size: 1.8rem; 
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+}
+
+@media (max-width: 768px) {
   .heading {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    font-weight:800;
+    font-size: 3rem; /* Responsive heading */
+  }
 
+  .marquee {
+    font-size: 2rem; /* Smaller marquee font */
   }
-  
-  .login-button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #4285f4; /* Google blue */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
+
+  .login-btn {
+    padding: 10px 20px; /* Adjust button padding */
   }
-  
-  .login-button:hover {
-    background-color: #357ae8; /* Darker blue on hover */
-  }
-  
-  .college-name {
-    position: absolute;
-    top: 20px; /* Adjust as needed */
-    left: 20px; /* Adjust as needed */
-    font-size: 1.5rem;
-    color: white;
-  }
+}

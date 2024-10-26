@@ -21,6 +21,15 @@ export default function Dashboard() {
   const openEditModal = (event) => {
     setSelectedEvent(event);
     setIsEditModalOpen(true);
+    if (document.getElementById('editTitle')) {
+        document.getElementById('editTitle').value = event.title;
+        document.getElementById('editOrganizer').value = event.organizer;
+        document.getElementById('editDate').value = event.date;
+        document.getElementById('editTime').value = event.time;
+        document.getElementById('editVenue').value = event.venue;
+        document.getElementById('editDescription').value = event.description;
+        document.getElementById('editStatus').value = event.status;
+      }
   };
 
   const closeEditModal = () => {
@@ -43,6 +52,25 @@ export default function Dashboard() {
     event.target.reset();
   };
 
+const saveEventChanges = (e) => {
+    e.preventDefault();
+    const updatedEvent = {
+      title: e.target.editTitle.value,
+      organizer: e.target.editOrganizer.value,
+      date: e.target.editDate.value,
+      time: e.target.editTime.value,
+      venue: e.target.editVenue.value,
+      description: e.target.editDescription.value,
+      status: e.target.editStatus.value,
+    };
+
+    setEvents(events.map(event => (event === selectedEvent ? updatedEvent : event)));
+    closeEditModal();
+  };
+
+  const deleteEvent = (eventToDelete) => {
+    setEvents(events.filter(event => event !== eventToDelete));
+  };
   return (
     <div className="dashboard-container">
       <header>
@@ -118,7 +146,7 @@ export default function Dashboard() {
                   <button
                     className="delete-btn"
                     onClick={() =>
-                      setEvents(events.filter((_, i) => i !== index))
+                      deleteEvent(event)
                     }
                   >
                     Delete
@@ -139,25 +167,26 @@ export default function Dashboard() {
             </span>
             <h2>Edit Event</h2>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const updatedEvent = {
-                  ...selectedEvent,
-                  title: e.target.editTitle.value,
-                  organizer: e.target.editOrganizer.value,
-                  date: e.target.editDate.value,
-                  time: e.target.editTime.value,
-                  venue: e.target.editVenue.value,
-                  description: e.target.editDescription.value,
-                  status: e.target.editStatus.value,
-                };
-                setEvents(
-                  events.map((event) =>
-                    event === selectedEvent ? updatedEvent : event
-                  )
-                );
-                closeEditModal();
-              }}
+            //   onSubmit={(e) => {
+            //     e.preventDefault();
+            //     const updatedEvent = {
+            //       ...selectedEvent,
+            //       title: e.target.editTitle.value,
+            //       organizer: e.target.editOrganizer.value,
+            //       date: e.target.editDate.value,
+            //       time: e.target.editTime.value,
+            //       venue: e.target.editVenue.value,
+            //       description: e.target.editDescription.value,
+            //       status: e.target.editStatus.value,
+            //     };
+            //     setEvents(
+            //       events.map((event) =>
+            //         event === selectedEvent ? updatedEvent : event
+            //       )
+            //     );
+            //     closeEditModal();
+            //   }} 
+            onSubmit={saveEventChanges}
             >
               <label htmlFor="editTitle">Event Title:</label>
               <input
@@ -233,3 +262,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+

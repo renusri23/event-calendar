@@ -44,10 +44,10 @@ function App() {
       <Router>
         <div className="App">
           <Home/>
-          {/* <AdminDashboard/> */}
+          <AdminDashboard/>
           <Routes>
             {/* <Route path="/" element={<Login />} /> */}
-            <Route path="/admin" element={<AdminDashboard />} />2
+            {/* <Route path="/admin" element={<AdminDashboard />} />2 */}
             {/* <Route path="/user" element={<User Dashboard />} /> */}
             <Route path="/event/:id" element={<EventDetails />} />
           </Routes>

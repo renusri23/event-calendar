@@ -1,0 +1,86 @@
+/* src/components/HomePage.css */
+.home-page {
+    background-image: url('./$REYNF97.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full height */
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    color: white;
+    font-size: 5rem; /* Adjust font size */
+    font-weight: bold; /* Make the font bold */
+    padding: 10px 0; /* Add some padding */
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .marquee span {
+    display: inline-block;
+    animation: marquee 10s linear infinite; /* Animation for scrolling */
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+
+  .marquee img{
+  height:auto;
+  width:auto;
+  background-size: cover;
+
+
+  }
+  .heading {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    font-weight:800;
+
+  }
+  
+  .login-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4285f4; /* Google blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .login-button:hover {
+    background-color: #357ae8; /* Darker blue on hover */
+  }
+  
+  .college-name {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    font-size: 1.5rem;
+    color: white;
+  }

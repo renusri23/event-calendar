@@ -36,16 +36,18 @@ import AdminDashboard from './components/AdminDashboard';
 // import UserDashboard from './components/UserDashboard';
 import EventDetails from './components/EventDetails';
 import { AuthProvider } from './context/AuthContext';
+import Home from './components/home.js';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <div className="App">
-          <AdminDashboard/>
+          <Home/>
+          {/* <AdminDashboard/> */}
           <Routes>
-            <Route path="/" element={<Login />} />
-            {/* <Route path="/admin" element={<AdminDashboard />} />2 */}
+            {/* <Route path="/" element={<Login />} /> */}
+            <Route path="/admin" element={<AdminDashboard />} />2
             {/* <Route path="/user" element={<User Dashboard />} /> */}
             <Route path="/event/:id" element={<EventDetails />} />
           </Routes>

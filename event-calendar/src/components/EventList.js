@@ -31,7 +31,7 @@
 
 // src/components/EventsList.js
 import React from 'react';
-import Event from './Event';
+import Event from './Event.js';
 import './EventList.css';
 
 const EventsList = ({ events }) => {

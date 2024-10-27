@@ -2,7 +2,8 @@
 
 */
 .home-page {
-  background-image: url('./$REYNF97.jpeg'); 
+  /* background-image: url('./$REYNF97.jpeg');  */
+  /* background:url('./photo-1642489069222-3b8f36c0e89e.avif'); */
   /* Replace with your image path */
   background-size: cover;
   height: 100vh;
@@ -22,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Gradient overlay for depth */
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)); /* Gradient overlay for depth */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,9 +34,10 @@
 }
 .jubble-text {
   font-weight:800;
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   color:rgb(199, 143, 22);
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-family:Georgia, 'Times New Roman', Times, serif;
   
   display: inline-block; /* Required for transform */
   transition: transform 0.5s ease; /* Smooth transition */
@@ -111,6 +113,7 @@
 
 .heading {
   font-size: 3.5rem;
+  font-family:initial;
   margin: 20px 0;
   font-weight: 800;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);

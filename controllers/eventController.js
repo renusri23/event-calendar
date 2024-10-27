@@ -1,16 +1,33 @@
 // controllers/eventController.js
 const Event = require('../models/Event');
+const { body, validationResult } = require('express-validator');
 
 // Create a new event
-exports.createEvent = async (req, res) => {
-  try {
-    const event = new Event(req.body);
-    await event.save();
-    res.status(201).json(event);
-  } catch (error) {
-    res.status(400).json({ message: 'Error creating event', error });
+exports.createEvent = [
+  // Validation rules
+  body('title').notEmpty().withMessage('Title is required'),
+  body('organizer').notEmpty().withMessage('Organizer is required'),
+  body('date').isDate().withMessage('A valid date is required'),
+  body('time').notEmpty().withMessage('Time is required'),
+  body('venue').notEmpty().withMessage('Venue is required'),
+  body('description').notEmpty().withMessage('Description is required'),
+  
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log('Validation errors:', errors.array());
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const event = new Event(req.body);
+      await event.save();
+      res.status(201).json(event);
+    } catch (error) {
+      res.status(400).json({ message: 'Error creating event', error });
+    }
   }
-};
+];
 
 // Get a specific event by ID
 exports.getEvent = async (req, res) => {

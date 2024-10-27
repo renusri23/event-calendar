@@ -1,36 +1,11 @@
-// src/components/HomePage.js
+
 import React from 'react';
-import { useAuth } from '../context/AuthContext'; // Assuming you have an AuthContext
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
-import './home.css'; // Create a CSS file for styles
+// import { useAuth } from '../context/AuthContext'; 
+import './home.css';
 
-// Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "YOUR_API_KEY",
-//   authDomain: "YOUR_AUTH_DOMAIN",
-//   projectId: "YOUR_PROJECT_ID",
-//   storageBucket: "YOUR_STORAGE_BUCKET",
-//   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-//   appId: "YOUR_APP_ID"
-// };
-
-// Initialize Firebase
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// }
 
 function HomePage() {
-//   const { user } = useAuth(); // Assuming you have user state in AuthContext
 
-//   const handleGoogleLogin = async () => {
-//     // const provider = new firebase.auth.GoogleAuthProvider();
-//     try {
-//       await firebase.auth().signInWithPopup(provider);
-//     } catch (error) {
-//       console.error("Error during Google login:", error);
-//     }
-//   };
 
   return (
     <div className='home-page'>
@@ -38,7 +13,7 @@ function HomePage() {
       {/* <div class="marquee"><span>IIT Dharwad</span></div> */}
       <h1 className="jubble-text">IIT Dharwad</h1>
         <h1 className="heading">Event Calendar</h1>
-        <div className="login-button"  >
+        <div className="login-button"   >
           <div class="login-image"></div>
           <div className="login-btn" >login with google</div>
         </div>

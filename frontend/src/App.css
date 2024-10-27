@@ -2,11 +2,26 @@
 .App {
   text-align: center;
   /* background-image: url('./components/$REYNF97.jpeg'); */
-  /* background-attachment: fixed; */
-  /* background-size: cover; */
+  /* background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
   width:100%; /* Full height */
+  /* background:url('./components/photo-1642489069222-3b8f36c0e89e.avif'); */ 
+}
+  .fixed-background {
+    background-image: url('./components/WhatsApp Image 2024-10-27 at 16.29.17_7f33a903.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire area */
+    background-attachment: fixed; /* Fix the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    position: fixed; /* Fix the position */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Ensure it stays behind other content */
+  }
+
   
 
 
-}
+

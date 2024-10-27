@@ -1,92 +1,25 @@
-/* src/components/EventsList.css */
-/* .past {
-    background-color: violet;
-    border-color: #ccc;
-    
-}
-
-.past .event-date h3 {
-    color: #888;
-    
-}
-
-.past .event-details h3 {
-    color: #666;
-   
-}
-
-.past .event-details p {
-    color: #999;
-   
-}
-/* Users.css (or EventList.css) */
-
-/* .event-list {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-bar {
-    margin-bottom: 20px;
-  }
-  
-  .search-bar input {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 200px; /* Adjust width as needed */
-  
-/*   
-  .event {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  .event h3 {
-    margin: 0;
-    color: #007bff; 
-  
-  .event p {
-    margin: 5px 0;
-    color: #555;
-  }
-  
-  .event-list p {
-    text-align: center;
-    color: #999;
-  }  */
-    /* Users.css */
 .users-container {
   padding: 20px;
-  /* background-color: rgba(255, 255, 255, 0.8);  */
-  /* Light background for the container */
-  max-width: 80%; /* Limit the width for better readability */
-    margin: 20px auto; /* Center the container */
-    padding: 20px; /* Add some padding */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    border-radius: 8px; /* Rounded corners */
+  max-width: 80%;
+    margin: 20px auto; 
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
 h2 {
-  color: indigo; /* Title color */
+  color: indigo; 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-bottom: 20px; /* Spacing below the title */
+  margin-bottom: 20px; 
 }
 
 .search-bar {
-  margin-bottom: 20px; /* Space below the search bar */
+  margin-bottom: 20px;
 }
 
 .search-bar input {
-  width: 100%; /* Full width for the search input */
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -99,7 +32,12 @@ h2 {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background-color: white; /* Ensure the background is visible */
+  background-color: rgb(249, 249, 249);
+  /* border-top-left-radius:10%; */
+  /* border-bottom-left-radius:10%; */
+
+
+
 }
 
 .event-date {
@@ -107,32 +45,38 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%; /* 30% for the date section */
-  background-color: indigo; /* Indigo color for the date section */
-  color: white; /* Make the text color white for better readability */
-  padding: 20px; /* Add some padding for better spacing */
+  width: 30%; 
+  /* background-color: indigo; */
+  background-image: url('./WhatsApp Image 2024-10-27 at 16.30.56_f5a3f020.jpg');
+  /* background-size: cover; */
+  color: white;
+  padding: 20px; 
+  /* border-top-left-radius:10%; */
+  /* border-bottom-left-radius:10%; */
 }
 
 .event-date h3 {
   margin: 0;
-  font-size: 24px; /* Larger font for the date */
+  font-size: 5.5rem; 
 }
 
 .event-date p {
   margin: 5px 0 0;
-  font-size: 14px; /* Smaller font for the month */
+  font-size: 14px; 
 }
 
 .event-details {
-  width: 70%; /* 70% for the event details section */
-  padding: 20px; /* Add some padding for better spacing */
-  background-color: lavender; /* Lavender color for the event details section */
+  width: 70%; 
+  padding: 20px; 
+  background-color: lavender; 
   transition: background-color 0.3s ease;
-  color: black; /* Make the text color black for better readability */
+  color: black;
+  /* background-image: url('./photo-1642489069222-3b8f36c0e89e.avif'); */
+  /* background-size: cover; */
 }
 
 .event-details h3 {
-  margin: 0 0 10px 0; /* Add some margin below the title for spacing */
+  margin: 0 0 10px 0; 
   color: indigo;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -146,8 +90,8 @@ h2 {
 .details-button {
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: indigo; /* Indigo background for the button */
-  color: white; /* White text color */
+  background-color: indigo; 
+  color: white; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -155,5 +99,5 @@ h2 {
 }
 
 .details-button:hover {
-  background-color: #5F1DBA; /* Darker shade on hover */
+  background-color: #5F1DBA;
 }

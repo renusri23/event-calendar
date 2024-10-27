@@ -1,10 +1,8 @@
-// src/components/Modal.js
 import React from 'react';
-import './Modal.css'; // Import the CSS for styling
+import './Modal.css'; 
 
 const Modal = ({ isOpen, onClose, event }) => {
-  if (!isOpen || !event) return null; // Don't render if modal is not open or event is not provided
-
+  if (!isOpen || !event) return null;
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -31,11 +29,11 @@ const Modal = ({ isOpen, onClose, event }) => {
         </div>
         <div className="modal-detail">
           <h3>Description:</h3>
-          <p>{event.description}</p> {/* Add more description */}
+          <p>{event.description}</p>
         </div>
         <div className="modal-detail">
           <h3>Location:</h3>
-          <p>{event.location}</p> {/* Additional field */}
+          <p>{event.location}</p> 
         </div>
         <button onClick={onClose}>Close</button>
       </div>

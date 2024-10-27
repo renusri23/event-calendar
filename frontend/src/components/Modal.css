@@ -1,11 +1,11 @@
-/* src/components/Modal.css */
+
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,40 +14,39 @@
   
   .modal-content {
     background: white;
-    padding: 30px; /* Increased padding */
-    border-radius: 10px; /* Slightly rounded corners */
-    max-width: 800px; /* Increased max-width for larger modal */
-    width: 90%; /* Responsive width */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
-    overflow-y: auto; /* Allow scrolling if content overflows */
+    padding: 30px;
+    border-radius: 10px; 
+    max-width: 800px; 
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    overflow-y: auto;
   }
   
   .modal-title {
-    font-size: 24px; /* Larger title font */
-    margin-bottom: 20px; /* Space below the title */
-    text-align: left; /* Align title to the left */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
   }
   
   .modal-detail {
-    margin-bottom: 15px; /* Space between details */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Space between heading and content */
-  }
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;}
   
   
   .modal-detail h3 {
-    margin: 0; /* Remove default margin */
-    font-weight: bold; /* Make headings bold */
-    font-size: 18px; /* Size for headings */
-    color: #333; /* Darker color for headings */
-    text-align: right; /* Align headings to the right */
+    margin: 0; 
+    font-weight: bold;
+    font-size: 18px; 
+    color: #333; 
+    text-align: right;
   width: 30%;
   }
   
   .modal-detail p {
-    margin: 5px 0 0; /* Space above the paragraph */
-    color: #555; /* Lighter color for text */
-    width: 65%; /* Set a width for paragraphs */
+    margin: 5px 0 0; 
+    color: #555;
+    width: 65%;
   text-align: left
   }
   
@@ -58,7 +57,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px; /* Space above the button */
+    margin-top: 20px;
   }
   
   button:hover {

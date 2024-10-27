@@ -152,7 +152,7 @@ const publishEvent = async (eventToPublish) => {
         </form>
       </section>
 
-      {/* Event List Section */}
+      
       <section className="event-list">
         <h2>Manage Events</h2>
         <table>

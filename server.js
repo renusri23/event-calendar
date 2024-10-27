@@ -13,24 +13,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/admin', adminRoutes);
 
 const connectDB = async () => {
-  // Check if already connected (readyState 1 means connected)
   if (mongoose.connection.readyState === 1) {
     console.log('Already connected to MongoDB');
     return;
   }
 
   try {
-    // Connecting to MongoDB without deprecated options
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/event-calendar');
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error('Could not connect to MongoDB:', error);
-    process.exit(1); // Exit if connection fails
+    process.exit(1);
   }
 };
 connectDB();
 
-// WebSocket setup
 const wss = new WebSocket.Server({ noServer: true });
 wss.on('connection', (ws) => {
   console.log('New WebSocket connection');

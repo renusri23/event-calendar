@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 // import Login from './components/Login';
 import AdminDashboard from './components/AdminDashboard';
-// import UserDashboard from './components/UserDashboard';
-// import EventDetails from './components/EventDetails';
 import { AuthProvider } from './context/AuthContext';
 import Home from './components/home.js';
 import Users from './components/users.js';
@@ -48,7 +46,6 @@ import { useState, useEffect } from 'react';
     },]);
   
     useEffect(() => {
-      // Fetch events from an API or use static data
       const fetchEvents = async () => {
         const response = await fetch('http://localhost:3000/events'); // Replace with your API endpoint
         const data = await response.json();

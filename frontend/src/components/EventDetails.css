@@ -1,70 +1,69 @@
-/* EventDetails.css */
 .event-details-container {
-    max-width: 900px; /* Maximum width for the container */
-    margin: 20px auto; /* Center the container */
-    padding: 20px; /* Padding around the content */
-    background-color: white; /* White background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 900px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   }
   
   .event-title {
-    font-size: 28px; /* Larger font size for the title */
-    color: #2c3e50; /* Dark color for the title */
-    margin-bottom: 15px; /* Space below the title */
-    font-family: 'Georgia', serif; /* Elegant font family */
-    text-align: center; /* Center align title */
+    font-size: 28px; 
+    color: #2c3e50; 
+    margin-bottom: 15px; 
+    font-family: 'Georgia', serif; 
+    text-align: center; 
   }
   
   .event-detail {
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between label and value */
-    margin-bottom: 15px; /* Space between details */
-    border-bottom: 1px solid #ecf0f1; /* Light bottom border for separation */
-    padding-bottom: 10px; /* Padding below details */
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #ecf0f1; 
+    padding-bottom: 10px; 
   }
   
   .event-detail:last-child {
-    border-bottom: none; /* Remove border from the last detail */
+    border-bottom: none;
   }
   
   .event-detail h3 {
-    margin: 0; /* Remove default margin */
-    font-size: 18px; /* Font size for headings */
-    color: #34495e; /* Darker color for headings */
-    font-family: 'Arial', sans-serif; /* Clean sans-serif font */
-    text-align: right; /* Align headings to the right */
-    width: 30%; /* Fixed width for headings */
+    margin: 0; 
+    font-size: 18px; 
+    color: #34495e;
+    font-family: 'Arial', sans-serif; 
+    text-align: right; 
+    width: 30%; 
   }
   
   .event-detail p {
-    margin: 0; /* Remove default margin */
-    color: #7f8c8d; /* Lighter color for text */
-    font-family: 'Lucida Sans Unicode', sans-serif; /* Elegant font for paragraphs */
-    width: 65%; /* Fixed width for paragraphs */
-    text-align: left; /* Align text to the left */
+    margin: 0; 
+    color: #7f8c8d;
+    font-family: 'Lucida Sans Unicode', sans-serif; 
+    width: 65%; 
+    text-align: left;
   }
   
   .event-description {
-    margin-top: 20px; /* Space above the description */
-    font-size: 16px; /* Font size for description */
-    color: #2c3e50; /* Dark color for description */
-    line-height: 1.6; /* Line height for readability */
-    font-family: 'Georgia', serif; /* Elegant font family */
+    margin-top: 20px; 
+    font-size: 16px; 
+    color: #2c3e50; 
+    line-height: 1.6; 
+    font-family: 'Georgia', serif; 
   }
   
   button {
-    padding: 10px 20px; /* Padding for button */
-    background-color: #2980b9; /* Button color */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-top: 20px; /* Space above the button */
-    font-size: 16px; /* Font size for button */
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    padding: 10px 20px; 
+    background-color: #2980b9;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
   }
   
   button:hover {
-    background-color: #1f6391; /* Darker shade on hover */
+    background-color: #1f6391;
   }

@@ -123,7 +123,7 @@ button.delete-btn:hover {
     margin: 0 auto;
     padding: 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9)), url('./WhatsApp Image 2024-10-27 at 16.29.17_7f33a903.jpg') no-repeat center center; /* Add a background image with a gradient overlay */
-    background-size: cover; /* Cover the entire section */
+    background-size: cover; 
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -140,7 +140,6 @@ form {
 }
 
 label {
-    /* flex: 0 0 150px; */
     margin-right: 15px;
     font-weight: bold;
     color: #333;
@@ -176,185 +175,180 @@ button:hover {
     background-color: #0056b3;
 }
 .event-list {
-    max-width: 90%; /* Limit the width of the section */
-    margin: 20px auto; /* Center the section with margin */
-    padding: 20px; /* Add padding around the section */
+    width:100%; 
+    margin: 20px auto; 
+    padding: 20px; 
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9)), url('./WhatsApp Image 2024-10-27 at 16.29.17_7f33a903.jpg') no-repeat center center; /* Background with gradient and image */
-    background-size: cover; /* Cover the entire section */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-size: cover;
+    border-radius: 8px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
 h2 {
-    color: #333; /* Darker color for the heading */
-    margin-bottom: 20px; /* Space below the heading */
+    color: #333; 
+    margin-bottom: 20px; 
 }
 
 table {
-    width: 100%; /* Full width for the table */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    width: 100%; 
+    border-collapse: collapse; 
 }
 
 table th, table td {
-    padding: 12px 15px; /* Padding for table cells */
-    text-align: left; /* Align text to the left */
-    border-bottom: 1px solid #ddd; /* Light border for table rows */
-    font-size: 0.9rem; /* Font size for table text */
+    padding: 12px 15px; 
+    text-align: left; 
+    border-bottom: 1px solid #ddd; 
+    font-size: 0.9rem;
 }
 
 table th {
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for headers */
-    color: #333; /* Darker color for header text */
+    background: rgba(255, 255, 255, 0.8);
+    color: #333; 
 }
 
 button.edit-btn, button.delete-btn, button.publish-btn {
-    padding: 8px 12px; /* Padding for buttons */
-    margin-right: 5px; /* Space between buttons */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 0.9rem; /* Font size for buttons */
-    transition: background 0.3s ease; /* Smooth background transition */
+    padding: 8px 12px; 
+    margin-right: 5px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-size: 0.9rem; 
+    transition: background 0.3s ease; 
 }
 
 button.edit-btn {
-    background: #3498db; /* Blue background for edit button */
-    color: white; /* White text color */
+    background: #3498db; 
+    color: white;
 }
 
 button.edit-btn:hover {
-    background: #2980b9; /* Darker blue on hover */
+    background: #2980b9; 
 }
 
 button.delete-btn {
-    background: #e74c3c; /* Red background for delete button */
-    color: white; /* White text color */
+    background: #e74c3c; 
+    color: white; 
 }
 
 button.delete-btn:hover {
-    background: #c0392b; /* Darker red on hover */
+    background: #c0392b; 
 }
 
 button.publish-btn {
-    background: #2ecc71; /* Green background for publish button */
-    color: white; /* White text color */
+    background: #2ecc71; 
+    color: white; 
 }
 
 button.publish-btn:hover {
-    background: #27ae60; /* Darker green on hover */
-}
-/* Modal styles */
-.modal {
-    display: flex; /* Use flexbox to center the modal */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: fixed; /* Fixed positioning */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1000; /* Ensure it appears above other content */
+    background: #27ae60; 
 }
 
-/* Modal content styling */
+.modal {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
+}
+
 .modal-content {
     background-image:url('WhatsApp Image 2024-10-27 at 16.30.56_f5a3f020.jpg') ;
     background-size: cover;
-    /* background: #ffffff; White background for the modal */
-    padding: 20px; /* Padding inside the modal */
-    width: 90%; /* Full width with a max limit */
-    max-width: 600px; /* Max width for larger screens */
-    max-height: 80vh; /* Limit the modal height to 80% of the viewport height */
-    overflow-y: auto; /* Enables scrolling within the modal if content overflows */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    position: relative; /* Positioning context for close button */
-    margin: auto; /* Centers the modal on the screen */
-    transition: transform 0.3s ease; /* Smooth transition for modal appearance */
+    padding: 20px; 
+    width: 90%;
+    max-width: 600px; 
+    max-height: 80vh; 
+    overflow-y: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    position: relative; 
+    margin: auto; 
+    transition: transform 0.3s ease; 
 }
 
-/* Close button styling */
+
 .close {
-    position: absolute; /* Position the close button */
-    top: 10px; /* Align to the top */
-    right: 15px; /* Align to the right */
-    font-size: 24px; /* Larger font for visibility */
-    color: #333; /* Dark color for contrast */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s ease; /* Smooth color transition */
+    position: absolute; 
+    top: 10px;
+    right: 15px; 
+    font-size: 24px; 
+    color: #333; 
+    cursor: pointer; 
+    transition: color 0.3s ease; 
 }
 
 .close:hover {
-    color: #ff0000; /* Change color on hover */
+    color: #ff0000;
 }
 
-/* Form styling */
+
 form {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack form elements vertically */
+    display: flex; 
+    flex-direction: column; 
 }
 
 label {
-    display: block; /* Ensure labels take the full width */
-    margin-top: 10px; /* Space above the label */
-    margin-bottom: 5px; /* Space below the label */
-    margin-left: 5px; /* Space to the left of the label */
-    font-weight: bold; /* Bold labels for emphasis */
+    display: block; 
+    margin-top: 10px; 
+    margin-bottom: 5px; 
+    margin-left: 5px; 
+    font-weight: bold; 
     color: #555; 
 }
 
 input, textarea, select {
-    padding: 10px; /* Padding for inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 15px; /* Space between inputs */
-    font-size: 16px; /* Standard font size */
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 15px;
+    font-size: 16px; 
     transition: border-color 0.3s ease;
-     /* Smooth border color transition */
      background-color: rgba(255, 255, 255, 0.5);
 }
 
 input:focus, textarea:focus, select:focus {
-    border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove default outline */
+    border-color: #007bff; 
+    outline: none; 
     background-color: rgba(255, 255, 255, 1)
 }
 
 button {
-    padding: 10px 15px; /* Padding for the button */
-    background-color: #007bff; /* Primary button color */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3; 
 }
-/* Publish Button */
 .publish-btn {
     background-color: #28a745;
     color: white; 
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners */
-    padding: 8px 12px; /* Padding for size */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 14px; /* Font size */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    border: none; 
+    border-radius: 4px; 
+    padding: 8px 12px; 
+    cursor: pointer;
+    font-size: 14px; 
+    transition: background-color 0.3s ease;
 }
 
 .publish-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
 }
 
 .publish-btn:active {
-    background-color: #1e7e34; /* Even darker on active click */
+    background-color: #1e7e34; 
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     header {
         flex-direction: column;

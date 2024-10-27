@@ -1,10 +1,7 @@
-// controllers/eventController.js
 const Event = require('../models/Event');
 const { body, validationResult } = require('express-validator');
 
-// Create a new event
 exports.createEvent = [
-  // Validation rules
   body('title').notEmpty().withMessage('Title is required'),
   body('organizer').notEmpty().withMessage('Organizer is required'),
   body('date').isDate().withMessage('A valid date is required'),
@@ -29,7 +26,6 @@ exports.createEvent = [
   }
 ];
 
-// Get a specific event by ID
 exports.getEvent = async (req, res) => {
   try {
     const event = await Event.findById(req.params.id);
@@ -40,7 +36,6 @@ exports.getEvent = async (req, res) => {
   }
 };
 
-// Update an existing event by ID
 exports.editEvent = async (req, res) => {
   try {
     const event = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -51,7 +46,6 @@ exports.editEvent = async (req, res) => {
   }
 };
 
-// Delete an event by ID
 exports.deleteEvent = async (req, res) => {
   try {
     const event = await Event.findByIdAndDelete(req.params.id);

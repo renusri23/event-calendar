@@ -1,59 +1,37 @@
-// import React, { useState } from 'react';
-// src/components/Event.js
-// import React from 'react';
-// import './Event.css';
-
-// const Event = ({ date, title, details }) => {
-//   return (
-//     <div className="event">
-//       <div className="event-date">
-//         <h3>{date}</h3>
-//       </div>
-//       <div className="event-details">
-//         <h3>{title}</h3>
-//         <p>{details}</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Event;
-
-// Users.js
 import React, { useState, useEffect } from 'react';
-import './users.css'; // Import the CSS file
-import Modal from './Modal'; // Import the Modal component
+import './users.css'; 
+import Modal from './Modal';
 
 const Users = ({ events }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredEvents, setFilteredEvents] = useState(events);
-  const [selectedEvent, setSelectedEvent] = useState(null); // State to hold the selected event
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+  const [selectedEvent, setSelectedEvent] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
-    // Filter events whenever the search term changes
+    
     const filtered = events.filter(event => {
       const eventDate = new Date(event.date);
       const eventMonth = eventDate.toLocaleString('default', { month: 'long' });
       const eventDay = eventDate.getDate();
-      const formattedDate = `${eventDay} ${eventMonth}`; // Format date for comparison
+      const formattedDate = `${eventDay} ${eventMonth}`; 
 
       const matchesDate = formattedDate.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesClub = event.organizer.toLowerCase().includes(searchTerm.toLowerCase());
 
-      return matchesDate || matchesClub; // Return true if either matches
+      return matchesDate || matchesClub; 
     });
     setFilteredEvents(filtered);
   }, [searchTerm, events]);
 
   const openModal = (event) => {
-    setSelectedEvent(event); // Set the selected event
-    setIsModalOpen(true); // Open the modal
+    setSelectedEvent(event); 
+    setIsModalOpen(true); 
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
-    setSelectedEvent(null); // Clear the selected event
+    setIsModalOpen(false); 
+    setSelectedEvent(null);
   };
 
   return (
@@ -87,7 +65,7 @@ const Users = ({ events }) => {
               <p>Status: {event.status}</p>
               <button 
                 className="details-button" 
-                onClick={() => openModal(event)} // Open the modal with the event details
+                onClick={() => openModal(event)} 
               >
                 Get More Details
               </button>
@@ -96,7 +74,7 @@ const Users = ({ events }) => {
         ))
       )}
       
-      {/* Render the modal if it's open */}
+    
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal} event={selectedEvent} />
       )}

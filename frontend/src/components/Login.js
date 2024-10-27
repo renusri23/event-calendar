@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React from 'react';
 
 function Login() {

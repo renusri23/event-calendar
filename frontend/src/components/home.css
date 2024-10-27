@@ -1,22 +1,17 @@
-/* src/components/HomePage.css 
 
-*/
 .home-page {
-  /* background-image: url('./$REYNF97.jpeg');  */
-  /* background:url('./photo-1642489069222-3b8f36c0e89e.avif'); */
-  /* Replace with your image path */
+  
   background-size: cover;
   height: 100vh;
-  width:100%; /* Full height */
-  /* position:fixed; */
-  font-family: 'Arial', sans-serif; /* Set a clean font */
-  overflow: hidden; /* Prevent overflow from animations */
+  width:100%; 
+  font-family: 'Arial', sans-serif; 
+  overflow: hidden; 
 }
 
 .overlay {
   height: 100vh;
   width:100%;
-  font-family: 'Arial', sans-serif; /* Set a clean font */
+  font-family: 'Arial', sans-serif; 
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -30,7 +25,7 @@
   align-items: center;
   color: white;
   text-align: center;
-  padding: 40px; /* More padding for a spacious feel */
+  padding: 40px; 
 }
 .jubble-text {
   font-weight:800;
@@ -39,15 +34,14 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   font-family:Georgia, 'Times New Roman', Times, serif;
   
-  display: inline-block; /* Required for transform */
-  transition: transform 0.5s ease; /* Smooth transition */
+  display: inline-block; 
+  transition: transform 0.5s ease; 
 }
 
 .jubble-text:hover {
   animation: jubble 0.6s ease forwards;
   color: #FFA500;
-  /* font-stretch: semi-condensed; */
-   /* Trigger animation on hover */
+ 
 }
 
 @keyframes jubble {
@@ -55,16 +49,16 @@
     transform: translateY(0);
   }
   25% {
-    transform: translateY(-10px); /* Move up */
+    transform: translateY(-10px);
   }
   50% {
-    transform: translateY(5px); /* Move down */
+    transform: translateY(5px); 
   }
   75% {
-    transform: translateY(-5px); /* Move up again */
+    transform: translateY(-5px);
   }
   100% {
-    transform: translateY(0); /* Back to original */
+    transform: translateY(0);
   }
 }
 
@@ -82,13 +76,13 @@
   background-image: url('./login-icon.png');
   background-size: cover;
   margin-bottom: 10px;
-  border-radius: 50%; /* Circular image for style */
+  border-radius: 50%; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease; /* Add scaling on hover */
+  transition: transform 0.2s ease;
 }
 
 .login-image:hover {
-  transform: scale(1.1); /* Scale effect on hover */
+  transform: scale(1.1);
 }
 
 .login-btn {
@@ -117,7 +111,7 @@
   margin: 20px 0;
   font-weight: 800;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  animation: fade-in 1s ease-out; /* Fade-in effect */
+  animation: fade-in 1s ease-out;
 }
 
 @keyframes fade-in {
@@ -140,14 +134,14 @@
 
 @media (max-width: 768px) {
   .heading {
-    font-size: 3rem; /* Responsive heading */
+    font-size: 3rem;
   }
 
   .marquee {
-    font-size: 2rem; /* Smaller marquee font */
+    font-size: 2rem;
   }
 
   .login-btn {
-    padding: 10px 20px; /* Adjust button padding */
+    padding: 10px 20px;
   }
 }
